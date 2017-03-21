@@ -3,7 +3,8 @@
     android:layout_width="fill_parent"
     android:layout_height="120dp"
     android:orientation="vertical"
-    android:padding="@dimen/activity_horizontal_margin">
+    android:padding="@dimen/activity_horizontal_margin"
+    android:weightSum="1">
 
     <TextView
         android:id="@+id/idfcookies"
@@ -17,8 +18,8 @@
     <TextView
         android:id="@+id/des"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:paddingBottom="2dip"
         android:textColor="@color/colorAccent" />
 
- </LinearLayout>
+</LinearLayout>

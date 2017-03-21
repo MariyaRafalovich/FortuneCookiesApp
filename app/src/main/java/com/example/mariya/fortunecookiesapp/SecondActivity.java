@@ -56,7 +56,7 @@ public class SecondActivity extends AppCompatActivity {
                 handler.post(new Runnable() {
                     public void run() {
                         try {
-                            new GetContacts().execute("http://localhost/Fortune-Cookies-master-to-connect%20with%20Android/api/getData.php");
+                            new GetContacts().execute("http://10.0.2.2/Fortune-Cookies-master-to-connect%20with%20Android/api/getData.php");
                         } catch (Exception e) {
                             Log.d(TAG, e.getMessage());
                         }
@@ -93,18 +93,18 @@ public class SecondActivity extends AppCompatActivity {
         protected void onPreExecute() {
             super.onPreExecute();
 
-            //CLEAN LIST IF YOU USE TIME, IT APPEND THE JSON FILE SEVERAL TIMES, SO IT REPEATS FOR THAT WE NEED TO CLEAN LIST TO SHOW IT ONLY ONCE
+            //CLEAN LIST AND SHOW ONE BY ONE
             adapter = new ItemAdapter(getApplicationContext(), android.R.layout.simple_list_item_1, contactList) {
             };
             contactList.clear();
             dispList.setAdapter(null);
 
-            if(!isConnected()){
+            if(!isConnected())
+
                 startActivity(new Intent(WifiManager.ACTION_PICK_WIFI_NETWORK));
             }
-        }
 
-        @Override
+       @Override
         protected String doInBackground(String... arg) {
 
             if(isConnected()){

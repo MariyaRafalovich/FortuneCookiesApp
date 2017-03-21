@@ -25,9 +25,8 @@ public class ItemAdapter extends ArrayAdapter<Contact> {
 
         View rowView = convertView;
         if (rowView == null) {
-            // Create a new view into the list.
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            rowView = inflater.inflate(R.layout.activity_second, parent, false);
+            rowView = inflater.inflate(R.layout.list_item, parent, false);
         }
 
         // Set data into the view.
